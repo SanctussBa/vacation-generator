@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0ecec;
+  font-family: 'Montserrat';
+  color: #002A35;
+  line-height: 1.8;
+}
+
+.container {
+  min-width: 400px;
+  height: 100vh;
+  margin: 1rem auto;
+  overflow: auto;
+  padding: 0 2rem;
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    min-width: 300px;
+  }
+}
+img {
+  height: 100px;
+  width: auto;
+}
+/* ..............autocomplete countries........... */
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  max-height: 200px;
+  overflow: auto;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+.form-group {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+input[type='text'], select, textarea #myInput{
+  display: block;
+  width: inherit;
+  padding: 0.4rem;
+  font-size: 1.3rem;
+  color: #014552;
+  border: 1px solid #CCC;
+}
+textarea {
+  width: 100%;
+}
+.btn {
+  display: block;
+  width: 100%;
+  background: #014552;
+
+}
+input[type='submit'] {
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  -webkit-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  -moz-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  -o-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  transition: letter-spacing 0.4s 0.1s ease-in-out;
+}
+
+input[type='submit']:hover {
+  letter-spacing: 2px;
+}
+
+
+.saved {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+}
+a {
+  text-decoration: none;
+  color: #014552;
+  padding: 20px;
+  -webkit-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  -moz-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  -o-transition: letter-spacing 0.4s 0.1s ease-in-out;
+  transition: letter-spacing 0.4s 0.1s ease-in-out;
+}
+
+
+a:hover {
+  letter-spacing: 2px;
+}

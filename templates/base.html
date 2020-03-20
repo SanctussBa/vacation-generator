@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Santa Baltmane">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat&display=swap" rel="stylesheet">
+
+    <title>Vacation Generator</title>
+  </head>
+  <body>
+    <div class="container1">
+      <a id="o"href="{{url_for('add_data')}}">o</a>
+      <div class="content">
+        <div class="content2">
+          <nav>
+            <ul class="navigation">
+              <li><a href="{{url_for('index')}}">Home</a></li>
+              <li><a href="#filter">Add Filter</a></li>
+              <li><a href="#top">Top destinations</a></li>
+              <li><a href="{{url_for('about')}}">About</a></li>
+              <li><a href="#contacts">Contact</a></li>
+            </ul>
+          </nav>
+
+          {% block content %}
+
+          {% endblock %}
+
+          <div class="btn">
+            <a class="button" href="{{url_for('generator')}}">Generate your destination</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  id="filter" class="container2">
+      <div class="content">
+        <form class="" action="/filter" method="POST">
+          <div class="title">
+            <h1>Filter your destination</h1>
+            <p>Filter your preferance for the best vacation ever. Select all what you expect from your random destination.</p>
+          </div>
+          <div class="form-group">
+            <div class="select">
+              <h3>Continent</h3>
+              <select class="form-group" name="continent">
+                <option value="any" selected>Any</option>
+                <option value="europe">Europe</option>
+                <option value="africa">Africa</option>
+                <option value="asia">Asia</option>
+                <option value="oceania">Oceania</option>
+                <option value="north">North America</option>
+                <option value="south">South America</option>
+              </select>
+            </div>
+            <div class="select">
+              <h3>Vacation type</h3>
+              <select class="form-group" name="type">
+                <option value="any" selected>Any</option>
+                <option value="nat-park">Visit National Park/Nature</option>
+                <option value="city">Visit Big City</option>
+                <option value="beach">Visit Beach</option>
+                <option value="hiking">Hiking/Camping</option>
+                <option value="active">Active and Adventurous holiday</option>
+                <option value="party">Let's Party</option>
+                <option value="mountain">Winter/Mountain</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn">
+            <input class='filter' type="submit" value="Generate your destination">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="top" class="container3">
+      <div class="content">
+        <div class="title">
+          <h1>Top destinations</h1>
+          <p>Are you looking for most popular vacation destination? Most popular not just means overcrowded with tourists. It is most mopular for a reason. Approved destinations by popularity means that there you will find everything for tourist comfort. If this what you are looking for? Here you can find my favourite list of most popular holiday destinations in 2020.</p>
+        </div>
+
+        <div class="frame">
+
+          <a href="https://www.google.com/search?q=bora+bora+tahiti" target='_blank'><img class="slide slide1" src="../static/bora1.jpg" alt="bora"></a>
+          <a href="https://www.google.com/search?q=orlando+florida" target='_blank'><img class="slide slide2" src="../static/orlando1.jpg" alt="orl"></a>
+          <a href="https://www.google.com/search?q=grand+canyon+national+park" target='_blank'><img class="slide slide3" src="../static/canyon1.jpg" alt="orl"></a>
+          <a href="https://www.google.com/search?q=kyoto+japan" target='_blank'><img class="slide slide4" src="../static/kyoto1.jpg" alt="orl"></a>
+          <a href="https://www.google.com/search?q=paris+france" target='_blank'><img class="slide slide5" src="../static/paris1.jpg" alt="orl"></a>
+          <a href="https://www.google.com/search?q=rome+italy" target='_blank'><img class="slide slide6" src="../static/rome1.jpg" alt="orl"></a>
+
+          <div class="bottom-container">
+            <div class="arrow-left" onclick="plusDivs(-1)"><img class='arrow' src='../static/left.png'></div>
+            <div class="arrow-right" onclick="plusDivs(1)"><img class='arrow' src='../static/right.png'></div>
+
+            <span class="dots" onclick="currentDiv(1)">1</span>
+            <span class="dots" onclick="currentDiv(2)">2</span>
+            <span class="dots" onclick="currentDiv(3)">3</span>
+            <span class="dots" onclick="currentDiv(4)">4</span>
+            <span class="dots" onclick="currentDiv(5)">5</span>
+            <span class="dots" onclick="currentDiv(6)">6</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contacts" class="container4">
+      <div class="content">
+        <h2>Contact me</h2>
+        <form class="contact" action="{{url_for('mail')}}" method="POST">
+          <div class="group">
+            <h3>Name:</h3>
+            <input type="text" name="name" placeholder="Your name here..." required/>
+          </div>
+          <div class="group">
+            <h3>Email:</h3>
+            <input type="email" name="email" placeholder="Your e-mail here..." required>
+          </div>
+          <div class="group">
+            <h3>Message:</h3>
+            <textarea name="message" placeholder="Your message/feedback/comments/questions here..."></textarea>
+          </div>
+          <div class="group b">
+            <input type="submit" value="Send" class='btn'>
+          </div>
+        </form>
+      </div>
+      <div class="footer">
+        <div class="cont">
+          <div class="menu">
+            <a href="{{url_for('index')}}">Home</a>
+            <a href="{{url_for('about')}}">About</a>
+            <a href="#filter">Add Filter</a>
+            <a href="#top">Top destinations</a>
+          </div>
+          <div class="year">
+            <p>2020</p>
+          </div>
+          <div class="contact">
+            <a href="https://www.linkedin.com/in/santa-baltmane" target='_blank'><img src="../static/linkedin.png" alt="linkedin"></a>
+            <a href="https://github.com/SanctussBa" target='_blank'><img src="../static/github.png" alt="github"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dots");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+  </script>
+  </body>
+</html>

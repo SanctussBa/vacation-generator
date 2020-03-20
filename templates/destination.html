@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="quote">
+  <h2 class="destination">{{place}}</h2>
+  <p>{{ info }}</p>
+  <p>{{ description }}</p>
+
+</div>
+<div class="link-container">
+  <a href={{google_link}}>{{google_it}}</a>
+
+</div>
+
+{% endblock %}
