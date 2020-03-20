@@ -67,7 +67,7 @@ def filter():
         type = str(request.form['type'])
         link = "https://www.google.com/search?q="
 
-        connection = psycopg2.connect(user= "postgres", password = "berzone", host="localhost", port="5432", database="generator")
+        connection = psycopg2.connect(user= "jynasdeissbqqu", password = "74d771fb1054684f37e31f1bf706d3d4c0afb39c8cd82a71120f09f1640589c3", host="ec2-18-210-51-239.compute-1.amazonaws.com", port="5432", database="d5718s4db4oaif")
 
         cursor = connection.cursor()
 
@@ -158,7 +158,10 @@ def filter():
 @app.route('/generator', methods=['POST', 'GET'])
 def generator():
 
-    connection = psycopg2.connect(user= "postgres", password = "berzone", host="localhost", port="5432", database="generator")
+    # connection = psycopg2.connect(user= "postgres", password = "berzone", host="localhost", port="5432", database="generator")
+
+    connection = psycopg2.connect(user= "jynasdeissbqqu", password = "74d771fb1054684f37e31f1bf706d3d4c0afb39c8cd82a71120f09f1640589c3", host="ec2-18-210-51-239.compute-1.amazonaws.com", port="5432", database="d5718s4db4oaif")
+
     link = "https://www.google.com/search?q="
     map_link = "https://www.google.com/maps/place/"
     cursor = connection.cursor()
