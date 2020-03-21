@@ -126,6 +126,13 @@ h2.dots-after:after{
   z-index: 2;
   position: relative;
 }
+
+@media only screen and (max-width: 650px) {
+  .container2 {
+    padding-top: 0;
+
+  }
+}
 .container3 {
   height: 100vw;
   height: 100vh;
@@ -181,6 +188,13 @@ h2.dots-after:after{
   opacity: 0.8;
   padding: 20px;
 
+}
+@media only screen and (max-width: 600px) {
+  .content {
+    opacity: 1;
+    padding: 10px;
+
+  }
 }
 @media only screen and (max-width: 1240px) {
   .content {
